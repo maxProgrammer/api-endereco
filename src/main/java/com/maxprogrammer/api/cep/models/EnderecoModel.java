@@ -16,7 +16,7 @@ public class EnderecoModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cep;
-    private String endereco;
+    private String rua;
     private String bairro;
     private String localidade;
     private String uf;
@@ -28,9 +28,9 @@ public class EnderecoModel {
     public EnderecoModel() {
     }
 
-    public EnderecoModel(String cep, String endereco, String bairro, String localidade, String uf, String ibge, String ddd, String siafi) {
+    public EnderecoModel(String cep, String rua, String bairro, String localidade, String uf, String ibge, String ddd, String siafi) {
         this.cep = cep;
-        this.endereco = endereco;
+        this.rua = rua;
         this.bairro = bairro;
         this.localidade = localidade;
         this.uf = uf;
@@ -41,7 +41,7 @@ public class EnderecoModel {
 
     public void updateEndereco(EnderecoDto enderecoDto) {
         this.cep = enderecoDto.getCep();
-        this.endereco = enderecoDto.getEndereco();
+        this.rua = enderecoDto.getRua();
         this.bairro = enderecoDto.getBairro();
         this.localidade = enderecoDto.getLocalidade();
         this.uf = enderecoDto.getUf();
@@ -55,7 +55,7 @@ public class EnderecoModel {
         return "EnderecoModel{" +
                 "id=" + id +
                 ", cep='" + cep + '\'' +
-                ", endereco='" + endereco + '\'' +
+                ", endereco='" + rua + '\'' +
                 ", bairro='" + bairro + '\'' +
                 ", localidade='" + localidade + '\'' +
                 ", uf='" + uf + '\'' +

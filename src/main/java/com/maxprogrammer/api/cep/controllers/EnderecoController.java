@@ -25,14 +25,14 @@ public class EnderecoController {
 
     @GetMapping(value = "/api/endereco/{cep}")
     @Operation(summary = "Consulta endereço na base de dados pelo CEP")
-    public EnderecoModel retornaEndereco(@PathVariable("cep") String cep){
+    public EnderecoModel retornaEndereco(@PathVariable("cep") String cep) {
         return enderecoService.getEnderecoModel(cep);
     }
 
     @GetMapping(value = "/api/lista/enderecos")
     @Operation(summary = "Retorna todos os enderecos")
     public Page<EnderecoModel> retornaTodosEnderecos(@PageableDefault(page = 0,
-    size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable page){
+            size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable page) {
         return enderecoService.retornaTodosEnderecos(page);
     }
 

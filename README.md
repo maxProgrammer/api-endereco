@@ -4,11 +4,14 @@
 > Status: Construction 🚧
 
 <h1 align="center">
-  <img alt="Readme" title="Readme" src="https://user-images.githubusercontent.com/87916631/176977091-a1357328-aab6-4645-bc3d-adfa73af1ab2.JPG"/>
+  <img alt="Readme" title="Readme" src="https://user-images.githubusercontent.com/87916631/177011660-14d48fda-e226-440f-b0e2-421ef95e7ec6.PNG"/>
 </h1>
 
 ## 🔘 Fields of ArtigoModel are:
-+
++ id
++ endereco
++ 
+
 
 ## 📔 Features
 +

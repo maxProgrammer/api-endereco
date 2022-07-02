@@ -37,17 +37,17 @@ public class EnderecoService {
         EnderecoDto enderecoDto = consultaEnderecoPelaAPIExterna(cep);
         EnderecoModel novoEndereco = enderecoDto.novoEndereco();
         EnderecoModel possivelExistenciaNoDataBase = enderecoRepository.getEnderecoBycep(novoEndereco.getCep());
-        if (novoEndereco.getEndereco() != null) {
+        if (novoEndereco.getRua() != null) {
             if (possivelExistenciaNoDataBase == null) {
                 enderecoRepository.save(novoEndereco);
-                System.out.println("Novo endereço Salvo!");
+                System.out.println("\nEndereço adicionado:\n" + novoEndereco);
             } else {
                 atualizarEndereco(possivelExistenciaNoDataBase, enderecoDto);
-                System.out.println("Endereço atualizado!");
+                System.out.println("\nEndereço atualizado:\n" + novoEndereco);
             }
 
         } else {
-            System.out.println("CEP não Encontrado ou já existente na base de dados.\n" +
+            System.out.println("\nCEP não Encontrado.\n" +
                     "Favor informar um CEP válido.");
         }
 
@@ -60,16 +60,15 @@ public class EnderecoService {
     }
 
     @Transactional
-    public void excluirEndereco(String cep){
+    public void excluirEndereco(String cep) {
         EnderecoModel possivelendereco = getEnderecoModel(cep);
-        if(possivelendereco != null){
+        if (possivelendereco != null) {
+            System.out.println("\nEndereço selecionado para deleção:\n" + possivelendereco + "\n");
             enderecoRepository.delete(possivelendereco);
-        }
-        else{
-            System.out.println("CEP informado não existe no banco de dados.\n" +
+        } else {
+            System.out.println("\nCEP informado não existe no banco de dados.\n" +
                     "Favor informar um CEP válido!");
         }
     }
-
 
 }

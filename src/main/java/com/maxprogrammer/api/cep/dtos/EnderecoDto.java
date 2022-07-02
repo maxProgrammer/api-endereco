@@ -8,7 +8,7 @@ import lombok.Data;
 public class EnderecoDto {
     private String cep;
     @JsonProperty("logradouro")
-    private String endereco;
+    private String rua;
     private String complemento;
     private String bairro;
     private String localidade;
@@ -18,7 +18,7 @@ public class EnderecoDto {
     private String ddd;
     private String siafi;
 
-    public EnderecoModel novoEndereco(){
-        return new EnderecoModel(cep,endereco,bairro,localidade,uf, ibge,ddd,siafi );
+    public EnderecoModel novoEndereco() {
+        return new EnderecoModel(cep, rua, bairro, localidade, uf, ibge, ddd, siafi);
     }
 }
