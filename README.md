@@ -9,16 +9,20 @@
 
 ## 🔘 Fields of ArtigoModel are:
 + id
-+ endereco
-+ 
++ rua
++ bairro
++ uf;
++ ibge;
++ ddd;
++ siafi;
 
 
 ## 📔 Features
-+
++ iconsult an adress from external REST API
++ make a crud with the data retried from external REST API
 
 ## 🤝🏽 Business Rules
-
-+
++ if CEP already existis on database the adress must be updated.
 
 ## ⚒️ Technologies
 + Java 11
